@@ -1,0 +1,37 @@
+dataset:
+  data_dir: '/Dataset'
+  test:
+    patient_ID_test: ['L333', 'L506']
+  patch_size: 128
+  sampling_size: 
+  squeezing: true
+  sino_unfold: false
+  max_scale: 8
+  
+model:
+  name: cret_img
+  ensembling:
+  transfer_path:
+  encoder:
+    name:
+    upsampler:
+    input_dim:
+  decoder: 
+    max_freq: 
+  restorator: 
+    name: swinir
+    upsampler: conv
+    input_dim: 1
+  ct:
+    view: 512
+    SCD: 595 # Source-Center Distance
+    SDD: 1085.6 # Souorce-Detector Distance
+    num_det: 736
+    det_interval: 1.2858393
+    recon_interval: 0.6640625
+    recon_size: [512, 512]
+
+resume: 1
+n_threads: 4
+cpu: false
+seed: 1

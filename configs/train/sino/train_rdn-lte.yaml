@@ -1,0 +1,53 @@
+dataset:
+  data_dir: '/Dataset'
+  train:
+    patient_ID_train: ['L067','L096','L310','L143','L192','L286','L291']
+    repeat: 2
+  valid:
+    patient_ID_valid: ['L109']
+    repeat: 3
+  test:
+    patient_ID_test: ['L333', 'L506']
+  augment: true
+  batch_size: 4
+  patch_size: 128
+  sampling_size: 48
+  squeezing: true
+  min_scale: 1
+  max_scale: 4
+  sino_unfold: false
+
+model:
+  name: lte
+  encoder:
+    name: rdn
+    upsampler: none
+    input_dim: 1
+  decoder:
+    name: mlp
+    hidden_list: [64, 64]
+  ct:
+    view: 512
+    SCD: 595 # Source-Center Distance
+    SDD: 1085.6 # Souorce-Detector Distance
+    num_det: 736
+    det_interval: 1.2858393
+    recon_interval: 0.6640625
+    recon_size: [512, 512]
+
+optimizer:
+  name: ADAM
+  lr: 1.e-4
+  milestones: [60, 120, 180, 240]
+  gamma: 0.5
+  weight_decay: 0
+
+epochs: 300
+test_every: 5
+save_models: false
+resume: -1
+
+n_threads: 12
+cpu: false
+seed: 1
+fp_loss: 0
