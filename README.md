@@ -37,7 +37,7 @@ python main.py --config train/dual/train_rdn-cret+ --gpu 0,1 --save rdn_cret+
 ```
 
 ## Checkpoints
-- Pre-trained modules are can be downloaded in [here](https://drive.google.com/file/d/1iQn6YufXn4faGbCrzJiek5wLlmRcsajE/view?usp=sharing) (rdn_cret.pt & rdn_cret+.pt) 
+- Pre-trained modules are can be downloaded in [here](https://drive.google.com/drive/folders/1YsgoSnRkinB_wYpOKoDu1p8qXAALYuID?usp=share_link) (rdn_cret.pt & rdn_cret+.pt) 
 - Note that mask_info.pt is information about the sinogram mask for sinogram squeezing and should be placed at "data/mask/"
 ## Demo
 - We provide a demo trial of our proposed CRET in `demo.ipynb`
